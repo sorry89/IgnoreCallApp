@@ -1,0 +1,10 @@
+git init 
+git remote add origin https://githib.com/sorry89/IgnoreCallApp.git 
+git add -A //=> update all modified files 
+git commit -m "your Message"//=> must do it 
+git push -f origin master
+
+
+or
+
+git push https://githib.com/sorry89/IgnoreCallApp.git  master
