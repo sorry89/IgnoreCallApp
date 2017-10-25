@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jhn.shc.testapp2">
-<uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +21,12 @@
         <service
             android:name=".aaa"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity
+            android:name=".PermissionActivity"
+            android:label="@string/title_activity_permission"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

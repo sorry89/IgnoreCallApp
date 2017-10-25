@@ -1,53 +1,20 @@
 package com.jhn.shc.testapp2;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
+import android.preference.PreferenceActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends PreferenceActivity {
 
 
-    public final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
-
+    @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        addPreferencesFromResource(R.xml.pref_setting_test1);
 
-        int permissionContact = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS);
-
-        if (permissionContact == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, MY_PERMISSIONS_REQUEST_READ_CONTACTS);
-        } else
-            Toast.makeText(this, "Contact permission authorized", Toast.LENGTH_LONG).show();
-    }
-
-    //권한을 요청했을 때 호출되는 함
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_READ_CONTACTS: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
-
-                } else {
-
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-                }
-                return;
-
-            }
-        }
+        Intent intent=new Intent(MainActivity.this,PermissionActivity.class);
+        startActivity(intent) ;
 
     }
 }

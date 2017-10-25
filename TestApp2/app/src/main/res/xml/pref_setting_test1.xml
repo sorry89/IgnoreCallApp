@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="time_on_swtich"
+        android:title="시간 설정" />
+    <EditTextPreference
+        android:defaultValue="Default value"
+        android:key="edit_text_preference_1"
+        android:selectAllOnFocus="true"
+        android:dependency="time_on_swtich"
+        android:singleLine="true"
+        android:title="start" />
+    <EditTextPreference
+        android:defaultValue="Default value"
+        android:key="edit_text_preference_2"
+        android:dependency="time_on_swtich"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="end" />
+</PreferenceScreen>
