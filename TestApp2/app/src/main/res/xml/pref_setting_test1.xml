@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:preference="http://schemas.android.com/apk/res-auto">
 
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="time_on_swtich"
-        android:title="시간 설정" />
-    <EditTextPreference
-        android:defaultValue="Default value"
-        android:key="edit_text_preference_1"
-        android:selectAllOnFocus="true"
-        android:dependency="time_on_swtich"
-        android:singleLine="true"
-        android:title="start" />
-    <EditTextPreference
-        android:defaultValue="Default value"
-        android:key="edit_text_preference_2"
-        android:dependency="time_on_swtich"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:title="end" />
+    <PreferenceCategory android:title="Setting 1" >
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="switch1"
+            android:title="시간 설정 활성화" />
+
+        <com.jhn.shc.testapp2.NumberPickerPreference
+            android:defaultValue="false"
+            android:key="key_give_me_a_number"
+            android:dependency="switch1"
+            android:title="Test"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Setting 2" >
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="switch2"
+            android:title="두 번 이상 수신 시 무음을 해제" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="switch3"
+            android:title="010 수신 무시" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
