@@ -39,10 +39,11 @@ public class MyPreferenceFragment extends PreferenceFragment
         Preference giveMeANumberPreference = findPreference(PREF_GIVE_ME_A_NUMBER);
         giveMeANumberPreference.setSummary(Integer.toString(aNumber) + "min");
 
-        //fragment 에서 메뉴를 사용하기 위해 호출해야 함
+        Constant.a = getPreferenceManager().getSharedPreferences().getBoolean(SW1,false);
+        Constant.b = getPreferenceManager().getSharedPreferences().getBoolean(SW2,false);
+        Constant.c = getPreferenceManager().getSharedPreferences().getBoolean(SW3,false);
 
-        // OptionMenu를 사용할지 결정
-        // 이 부분을 설정해줘야 onCreateOptionsMenu 함수가 호출 됩니다.
+        //fragment 에서 메뉴를 사용하기 위해 호출해야 함
 
     }
 
@@ -73,18 +74,24 @@ public class MyPreferenceFragment extends PreferenceFragment
         switch (preference.getKey()) {
             case SW1:
                 tSW1 = Boolean.valueOf(newValue.toString());
+                Constant.a = Boolean.valueOf(newValue.toString());
+
                 Constant.S_SW1 = newValue.toString();
                 Log.i(TAG, String.format("PREF_PERSISTS_PREFERENCES(value: %s)", newValue.toString()));
                 Log.i(TAG, String.format("Reset1 SW1: %b, SW2:%b,SW3:%b",tSW1,tSW2,tSW3));
                 return true;
             case SW2:
                 tSW2 = Boolean.valueOf(newValue.toString());
+                Constant.b = Boolean.valueOf(newValue.toString());
+
                 Constant.S_SW2 = newValue.toString();
                 Log.i(TAG, String.format("SW2(value: %s)", newValue.toString()));
                 Log.i(TAG, String.format("Reset2 SW1: %b, SW2:%b,SW3:%b",tSW1,tSW2,tSW3));
                 return true;
             case SW3:
                 tSW3 = Boolean.valueOf(newValue.toString());
+                Constant.c = Boolean.valueOf(newValue.toString());
+
                 Constant.S_SW3 = newValue.toString();
                 Log.i(TAG, String.format("SW2(value: %s)", newValue.toString()));
                 Log.i(TAG, String.format("Reset3 SW1: %b, SW2:%b,SW3:%b",tSW1,tSW2,tSW3));

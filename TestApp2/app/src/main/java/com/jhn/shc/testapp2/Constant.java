@@ -15,4 +15,6 @@ public class Constant {
     static String S_SW2="false";
     static String S_SW3="false";
 
+    static boolean a,b,c;
+
 }

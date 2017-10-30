@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/action_search"
-        android:icon="@drawable/ic_autorenew_black_24dp"
-        android:title=""
-        android:showAsAction="always" />
-    <item android:id="@+id/action_settings" android:title="s"
-        android:orderInCategory="100" app:showAsAction="never" />
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/apply"
+        android:icon="@drawable/ic_action_name"
+        android:title="write"
+        app:showAsAction="always"
+        />
 </menu>
+
+
